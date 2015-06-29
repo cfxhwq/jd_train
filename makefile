@@ -1,8 +1,19 @@
-SRCS = $(wildcard *.cpp)
+all: loadParameters.out  time.out pid_shm.out pid_mmap.out
 
-all: %.out
+loadParameters.out: loadParameters.cpp
+	g++ $< -o $@
 
-%.out: %.cpp
+time.out: time.cpp
+	g++ $< -o $@ 
 
-.cpp.out:
-	g++  $< -o $*.out
+pid_shm.out: pid_shm.cpp
+	g++ $< -o $@
+
+pid_mmap.out: pid_mmap.cpp
+	g++ $< -o $@ -lrt
+
+clean:
+	rm *.out
+
+
+
