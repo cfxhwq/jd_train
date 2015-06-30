@@ -1,4 +1,7 @@
-all: loadParameters.out  time.out pid_shm.out pid_mmap.out
+all: loadParameters.out  time.out pid_shm.out pid_mmap.out rwFile.out
+
+rwFile.out: rwFile.cpp
+	g++ $< -o $@
 
 loadParameters.out: loadParameters.cpp
 	g++ $< -o $@
