@@ -20,10 +20,11 @@ int main(void){
 	int i = 0;
 	if(file.is_open())
 		while(!file.eof()){
-			cout<< "line " << ++i << ":\t";
-			char* s;
+			//cout<< "line " << ++i << ":\t";
+			char *s;
+			//char s[20];
 			file.getline(s, 20);
-			cout<< s <<endl;
+			cout<< "line " << i << s <<endl;
 		}
 	file.close();
 	cout<< (file == NULL) <<endl;
